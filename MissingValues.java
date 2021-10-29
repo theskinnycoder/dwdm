@@ -56,7 +56,7 @@ class Main {
                 break;
             }
             case 2: {
-                for (i = 0; i < n; i++) {
+                for (i = 0; i < n; ++i) {
                     if (a[i] == 0)
                         b[i] = Main.glob;
                     else

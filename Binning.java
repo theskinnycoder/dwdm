@@ -28,8 +28,8 @@ class Main {
         int[][] b = new int[m][r];
         
         System.out.print("\nEnter the elements into the array :\n");
-        for (i = 0; i < m; i++) {
-            for (j = 0; j < r; j++) {   
+        for (i = 0; i < m; ++i) {
+            for (j = 0; j < r; ++j) {   
                 a[i][j] = scan.nextInt();
             }
         }
@@ -44,45 +44,38 @@ class Main {
         switch (key) {
 
             case 1: {
-                // Print all bins
-                Main.printAllBins(a);
+                b = a;
                 break;
             }
 
             case 2: {
-                for (i = 0; i < m; i++) {
+                for (i = 0; i < m; ++i) {
                     int sum = 0;
 
                     // To find out sum
-                    for (j = 0; j < r; j++)
+                    for (j = 0; j < r; ++j)
                         sum += a[i][j];
 
                     // To replace with mean
-                    for (j = 0; j < r; j++)
+                    for (j = 0; j < r; ++j)
                         b[i][j] = sum / r;
                 }
-
-                // Print all bins
-                Main.printAllBins(b);
                 break;
             }
 
             case 3: {
                 int middle = r / 2;
-                for (i = 0; i < m; i++) {
+                for (i = 0; i < m; ++i) {
                     // To replace with median
-                    for (j = 0; j < r; j++)
+                    for (j = 0; j < r; ++j)
                         b[i][j] = a[i][middle];
                 }
-                
-                // Print all bins
-                Main.printAllBins(b);
                 break;
             }
 
             case 4: {                
-                for (i = 0; i < m; i++) {
-                    for (j = 0; j < r; j++) {
+                for (i = 0; i < m; ++i) {
+                    for (j = 0; j < r; ++j) {
                         if (j == 0 || j == r - 1)
                             b[i][j] = a[i][j];
                         else {
@@ -93,11 +86,11 @@ class Main {
                         }
                     }
                 }
-
-                // Print all bins
-                Main.printAllBins(b);
                 break;
             }
         }
+
+        // Print all bins
+        Main.printAllBins(b);
     }
 }
