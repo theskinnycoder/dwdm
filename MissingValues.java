@@ -16,6 +16,7 @@ class Main {
         // Get 'n' elements & compute 'mean'
         int mean = 0;
         System.out.print("Enter the elements into the array :\n");
+        
         for (i = 0; i < n; ++i) {
             a[i] = scan.nextInt();
             mean += a[i];
